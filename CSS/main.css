@@ -1,0 +1,43 @@
+* {
+	font-family: montserrat;
+}
+.body {
+	display: flex;
+	gap: 30px;
+	justify-items: center;
+	align-items: center;
+}
+img {
+	height: 60vh;
+}
+h1 {
+	color: #8b192a;
+}
+.caps {
+	text-transform: uppercase;
+}
+.divbox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 34px;
+}
+.resultbox {
+	background-color: #c46170;
+	display: flex;
+	justify-content: center;
+	width: 400px;
+	padding: 10px;
+	border-radius: 5px;
+	color: white;
+}
+.button {
+	all: unset;
+	background-color: #8b192a;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	width: 80px;
+	border-radius: 5px;
+	color: white;
+}
