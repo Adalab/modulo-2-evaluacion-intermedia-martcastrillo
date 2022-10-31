@@ -15,7 +15,8 @@
     <main>
         <h2 class="caps">Juego</h2>
         <h1 class="caps">Los anillos de poder</h1>
-        <p>La Tierra Media está en guerra! Lucharán razas leales a Sauron contra otras bondadosas que no quieren que el
+        <p class="text_intro">La Tierra Media está en guerra! Lucharán razas leales a Sauron contra otras bondadosas que
+            no quieren que el
             mal
             reine sobre sus tierras</p>
         <h4>Eres un jugador del ejército del bien, no olvides tu misión de ganar la batalla.</h4>
@@ -30,9 +31,19 @@
                 </select>
             </form>
             <button class="button js-bnt">Batalla</button>
+            <button class="restart collapsed js_bnt_restart">Reiniciar Juego</button>
+        </div>
+        <p class="js_bad_race_points bad_race_result_text"> </p>
+        <h3 class="resultbox js_result_text">¡Comienza la batalla!</h3>
+        <div class="points_box">
+            <h2 class="points">Puntuaciones</h2>
+            <span class="players_box">
+                <p>Jugadora: <span class="js_player_points"></span></p>
+                <p>Computadora: <span class="js_computer_points"></span></p>
+            </span>
         </div>
 
-        <h3 class="resultbox js_result_text">¡Comienza la batalla!</h3>
+
     </main>
     <script src="./js/main.js"></script>
 </body>

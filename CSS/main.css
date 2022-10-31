@@ -7,14 +7,25 @@
 	justify-items: center;
 	align-items: center;
 }
+.main {
+	width: 300px;
+}
+
 img {
+	margin: 30px;
 	height: 60vh;
 }
 h1 {
 	color: #8b192a;
 }
+.text_intro {
+	width: 700px;
+}
 .caps {
 	text-transform: uppercase;
+}
+.bad_race_result_text {
+	font-size: 10px;
 }
 .divbox {
 	display: flex;
@@ -26,7 +37,7 @@ h1 {
 	background-color: #c46170;
 	display: flex;
 	justify-content: center;
-	width: 400px;
+	width: 700px;
 	padding: 10px;
 	border-radius: 5px;
 	color: white;
@@ -40,4 +51,36 @@ h1 {
 	width: 80px;
 	border-radius: 5px;
 	color: white;
+	&__restart {
+		background-color: black;
+	}
+}
+.points_box {
+	display: flex;
+	width: 700px;
+	flex-direction: column;
+	align-items: center;
+}
+.players_box {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+.points {
+	font-weight: 400;
+	color: #8b192a;
+}
+
+.restart {
+	all: unset;
+	background-color: black;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	width: 130px;
+	border-radius: 5px;
+	color: white;
+}
+.collapsed {
+	display: none;
 }
