@@ -8,11 +8,6 @@ const badRacePoints = document.querySelector(".js_bad_race_points");
 const playerPoints = document.querySelector(".js_player_points");
 const computerPoints = document.querySelector(".js_computer_points");
 
-const badRace1 = 2;
-const badRace2 = 2;
-const badRace3 = 2;
-const badRace4 = 3;
-const badRace5 = 5;
 
 function getRandomNumber(max) {
 	return Math.ceil(Math.random() * max);
@@ -20,6 +15,10 @@ function getRandomNumber(max) {
 
 let counter = 0;
 let numberOfTries = 0;
+//puntuacion buenos
+let goodPoints = 1;
+//puntuacion malos
+let badPoints = 1;
 function clickCounter() {
 	counter++;
 	numberOfTries = counter;
@@ -36,7 +35,7 @@ function clickCounter() {
 		}
 		//reinicio del contador
 		counter = 0;
-		
+
 	}
 }
 
@@ -51,10 +50,7 @@ function selectBadRaceForce(resultRandom) {
 	}
 	return badRaceType;
 }
-	//puntuacion buenos
-	let goodPoints = 1;
-	//puntuacion malos
-	let badPoints = 1;
+	
 function battle() {
 	const goodRaceTypeValue = parseInt(goodRaceType.value);
 	const randomNumber = getRandomNumber(5);
@@ -81,6 +77,7 @@ function battle() {
 
 function handleClickRestart(ev) {
 	ev.preventDefault();
+	
 	playerPoints.innerHTML = "";
 	computerPoints.innerHTML = "";
 	resultText.innerHTML = "¡Comienza la batalla!";
