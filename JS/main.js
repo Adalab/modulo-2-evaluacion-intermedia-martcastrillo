@@ -24,27 +24,46 @@ function clickCounter() {
 	counter++;
 	numberOfTries = counter;
 	console.log(`Número de partidas jugadas ${numberOfTries}`);
+	if (numberOfTries===10){
+		btn.classList.add('collapsed');
+		btnRestart.classList.remove('collapsed');
+		resultText.innerHTML = "LA PARTIDA LA HA GANADO ?????";	
+	/* 	if{
+			resultText.innerHTML = "LA PARTIDA LA HA GANADO";	
+		}
+		if else{
+			resultText.innerHTML = "LA PARTIDA LA HA GANADO";
+		}
+		else{
+			resultText.innerHTML = "LA PARTIDA LA HA GANADO";
+		} */
+		
+	}
 }
-let winningGoods = 0;
-let winningBads = 0;
+
+//puntuacion buenos
+let goodPoints = 1;
+//puntuacion malos
+let badPoints = 1;
+function select
+
 function battle() {
 	const randomNumber = getRandomNumber(5);
 	const badRaceType = randomNumber;
 	const goodRaceTypeValue = parseInt(goodRaceType.value);
-   
-
     ///luchando para que el contador de puntuación sume correctamente
 	if (badRaceType < goodRaceTypeValue) {
 		console.log(`LOS BUENOS ${goodRaceTypeValue} LOS MALOS ${badRaceType}`);
 		resultText.innerHTML = "Ha ganado el Ejército del Bien! Enhorabuena.";
 		badRacePoints.innerHTML = `La puntuación de la raza malvada es ${badRaceType}`;
-		playerPoints.innerHTML = winningGoods +1;
+		playerPoints.innerHTML = goodPoints++;
 	} else if (badRaceType > goodRaceTypeValue) {
 		console.log(`LOS BUENOS ${goodRaceTypeValue} LOS MALOS ${badRaceType}`);
 		badRacePoints.innerHTML = `La puntuación de la raza malvada es ${badRaceType}`;
 		resultText.innerHTML =
 			"Ha ganado el Ejército del Mal! Vuelve a Intentarlo.";
-		computerPoints.innerHTML = winningBads +1;
+			computerPoints.innerHTML = badPoints++;
+		
 	} else {
 		console.log(`LOS BUENOS ${goodRaceTypeValue} LOS MALOS ${badRaceType}`);
 		badRacePoints.innerHTML = `La puntuación de la raza malvada es ${badRaceType}`;
@@ -59,6 +78,16 @@ function handleClick(event) {
 	event.preventDefault();
 	battle();
 	clickCounter();
-}
 
+}
+function handleClickRestart(event) {
+	event.preventDefault();
+	playerPoints.innerHTML = '';
+	computerPoints.innerHTML = '';
+	resultText.innerHTML = "¡Comienza la batalla!";
+	btn.classList.remove('collapsed');
+	btnRestart.classList.add('collapsed');
+
+}
 btn.addEventListener("click", handleClick);
+btnRestart.addEventListener("click", handleClickRestart);
