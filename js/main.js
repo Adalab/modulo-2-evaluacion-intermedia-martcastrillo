@@ -28,13 +28,19 @@ function clickCounter() {
 		btnRestart.classList.remove("collapsed");
 		if (goodPoints > badPoints) {
 			resultText.innerHTML = "LA PARTIDA LA HA GANADO EL BIEN";
+			resultText.classList.add('resultboxGood');
 		} else if (goodPoints < badPoints) {
 			resultText.innerHTML = "LA PARTIDA LA HA GANADO EL MAL";
+			resultText.classList.add('resultboxBad');
 		} else {
 			resultText.innerHTML = "SE HA PRODUCIDO UN EMPATE";
+			resultText.classList.add('resultbox');
 		}
 		//reinicio del contador
 		counter = 0;
+		goodPoints = 1;
+		badPoints = 1;
+		
 
 	}
 }
@@ -60,18 +66,24 @@ function battle() {
 	if (badRaceValue < goodRaceTypeValue) {
 		console.log(`LOS BUENOS ${goodRaceTypeValue} LOS MALOS ${badRaceValue}`);
 		resultText.innerHTML = "Ha ganado el Ejército del Bien! Enhorabuena.";
-		badRacePoints.innerHTML = `La puntuación de la raza malvada es ${badRaceValue}`;
+		badRacePoints.innerHTML = `La fuerza que los malos han usado es ${badRaceValue}`;
+		resultText.classList.add('resultboxGood');
+		resultText.classList.remove('resultboxBad');
 		playerPoints.innerHTML = goodPoints++;
 	} else if (badRaceValue > goodRaceTypeValue) {
 		console.log(`LOS BUENOS ${goodRaceTypeValue} LOS MALOS ${badRaceValue}`);
-		badRacePoints.innerHTML = `La puntuación de la raza malvada es ${badRaceValue}`;
+		badRacePoints.innerHTML = `La fuerza que los malos han usado es ${badRaceValue}`;
+		resultText.classList.add('resultboxBad');
+		resultText.classList.remove('resultboxGood');
 		resultText.innerHTML =
 			"Ha ganado el Ejército del Mal! Vuelve a Intentarlo.";
 		computerPoints.innerHTML = badPoints++;
 	} else {
 		console.log(`LOS BUENOS ${goodRaceTypeValue} LOS MALOS ${badRaceValue}`);
-		badRacePoints.innerHTML = `La puntuación de la raza malvada es ${badRaceValue}`;
+		badRacePoints.innerHTML = `La fuerza que los malos han usado es ${badRaceValue}`;
 		resultText.innerHTML = "EMPATE";
+		resultText.classList.remove('resultboxGood');
+		resultText.classList.remove('resultboxBad');
 	}
 }
 
@@ -83,6 +95,7 @@ function handleClickRestart(ev) {
 	resultText.innerHTML = "¡Comienza la batalla!";
 	btn.classList.remove("collapsed");
 	btnRestart.classList.add("collapsed");
+	resultText.classList.add('resultbox');
 
 }
 
