@@ -40,8 +40,6 @@ function clickCounter() {
 		counter = 0;
 		goodPoints = 1;
 		badPoints = 1;
-		
-
 	}
 }
 
@@ -56,7 +54,7 @@ function selectBadRaceForce(resultRandom) {
 	}
 	return badRaceType;
 }
-	
+
 function battle() {
 	const goodRaceTypeValue = parseInt(goodRaceType.value);
 	const randomNumber = getRandomNumber(5);
@@ -89,7 +87,7 @@ function battle() {
 
 function handleClickRestart(ev) {
 	ev.preventDefault();
-	
+	badRacePoints.innerHTML = "";
 	playerPoints.innerHTML = "";
 	computerPoints.innerHTML = "";
 	resultText.innerHTML = "¡Comienza la batalla!";

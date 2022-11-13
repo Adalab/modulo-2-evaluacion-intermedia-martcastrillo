@@ -26,6 +26,7 @@ h1 {
 }
 .bad_race_result_text {
 	font-size: 10px;
+	height: 15px;
 }
 .divbox {
 	display: flex;
@@ -79,10 +80,12 @@ h1 {
 	width: 700px;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 .players_box {
 	display: flex;
 	width: 100%;
+
 	justify-content: space-around;
 }
 .points {
@@ -90,6 +93,10 @@ h1 {
 	color: #8b192a;
 }
 
+.player {
+	text-align: justify;
+	width: 200px;
+}
 .restart {
 	all: unset;
 	background-color: black;
